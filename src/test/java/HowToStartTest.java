@@ -24,5 +24,4 @@ public class HowToStartTest extends TestBase {
                 .submit()
                 .shouldNotLogin();
     }
-
 }
