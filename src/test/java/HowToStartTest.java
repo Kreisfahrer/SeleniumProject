@@ -1,10 +1,13 @@
 import core.TestBase;
+import helpers.CustomListener;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import pages.factory.HomePage;
 import pages.factory.LoginPage;
 
 import static com.codeborne.selenide.Selenide.open;
 
+@Listeners(CustomListener.class)
 public class HowToStartTest extends TestBase {
 
     @Test
