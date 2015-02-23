@@ -7,6 +7,7 @@ public class CustomListener extends ExitCodeListener{
 
     @Override
     public void onTestFailure(ITestResult result) {
+        super.onTestFailure(result);
         Actions.createAttachment(result.getMethod().getMethodName());
     }
 

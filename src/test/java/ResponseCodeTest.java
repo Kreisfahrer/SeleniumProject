@@ -42,14 +42,13 @@ public class ResponseCodeTest {
         Assert.assertTrue(SlowResourcesPage
                 .isSlowResourcesPage(), "Failed to open Slow Resources page");
 
+        sleep(30000);
+
         har = proxyServer.getHar();
 
         for(HarEntry entry : har.getLog().getEntries()) {
             HarRequest request = entry.getRequest();
             HarResponse response = entry.getResponse();
-
-            sleep(30000);
-
             Assert.assertEquals(response.getStatus(), 200,
                     "URL: " + request.getUrl() + " has bad response status");
         }
