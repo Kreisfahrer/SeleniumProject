@@ -1,4 +1,4 @@
-import core.ProxyTestBase;
+import core.basetests.ProxyTestBase;
 import helpers.CustomListener;
 import net.lightbody.bmp.core.har.HarEntry;
 import net.lightbody.bmp.core.har.HarRequest;
@@ -18,9 +18,7 @@ public class ResponseCodeTest extends ProxyTestBase {
     public void responseCodeTest() throws Exception {
         proxyServer.newHar("slowResources");
         StartPage.open("Slow Resources");
-        Assert.assertTrue(SlowResourcesPage
-                .isSlowResourcesPage(), "Failed to open Slow Resources page");
-
+        SlowResourcesPage.shouldAppearAndExactTextShouldBeVisible("Slow Resources");
         sleep(30000);
 
         har = proxyServer.getHar();

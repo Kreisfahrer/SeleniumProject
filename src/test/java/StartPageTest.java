@@ -1,4 +1,4 @@
-import core.TestBase;
+import core.basetests.TestBase;
 import helpers.Actions;
 import helpers.CustomListener;
 import org.testng.annotations.Listeners;
@@ -17,6 +17,7 @@ public class StartPageTest extends TestBase {
 
     @Test
     public void linkTest() throws IOException {
+        StartPage.shouldAppearAndExactTextShouldBeVisible("Welcome to the Internet");
         $$(StartPage.LINKS).shouldHave(size(35), exactTexts(Actions.getStringsFromResourceFile(LINK_TEXT_FILE_NAME)));
     }
 }

@@ -1,4 +1,4 @@
-package core;
+package core.basetests;
 
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.WebDriverRunner;
@@ -17,6 +17,9 @@ public class ProxyTestBase {
 
     @BeforeMethod
     public void setup() throws Exception {
+        if(!getWebDriver().toString().contains("(null)")) {
+            getWebDriver().quit();
+        }
         Configuration.browser = "chrome";
         Configuration.baseUrl = "http://the-internet.herokuapp.com";
         Configuration.timeout = 10000;

@@ -1,4 +1,4 @@
-import core.TestBase;
+import core.basetests.TestBase;
 import helpers.CustomListener;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
