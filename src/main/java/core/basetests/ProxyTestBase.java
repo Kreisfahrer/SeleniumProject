@@ -9,7 +9,7 @@ import org.testng.annotations.BeforeMethod;
 import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 import static org.openqa.selenium.net.PortProber.findFreePort;
 
-public class ProxyTestBase extends TestBase{
+public class ProxyTestBase extends TestBase {
     protected ProxyServer proxyServer;
     protected Har har;
 
