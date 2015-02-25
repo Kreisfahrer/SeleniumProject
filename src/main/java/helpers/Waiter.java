@@ -18,4 +18,14 @@ public class Waiter {
         });
     }
 
+    public static void waitForJquery(){
+        (new WebDriverWait(WebDriverRunner.getWebDriver(), 10)).until(new ExpectedCondition<Boolean>() {
+            @Override
+            public Boolean apply(WebDriver webDriver) {
+                JavascriptExecutor js = (JavascriptExecutor) webDriver;
+                return (Boolean) js.executeScript("return jQuery.active == 0");
+            }
+        });
+    }
+
 }
