@@ -4,11 +4,12 @@ import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import ru.yandex.qatools.allure.annotations.Attachment;
-import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 
 import java.io.File;
 import java.io.IOException;
 import java.util.List;
+
+import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 
 public class Actions {
 
