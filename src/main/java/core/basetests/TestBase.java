@@ -2,7 +2,7 @@ package core.basetests;
 
 import com.codeborne.selenide.Configuration;
 import helpers.EnvironmentWriter;
-import org.testng.annotations.BeforeGroups;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeMethod;
 
 import static com.codeborne.selenide.Selenide.open;
@@ -17,7 +17,7 @@ public class TestBase {
         open("/");
     }
 
-    @BeforeGroups
+    @AfterTest
     public void writeProperties() {
         EnvironmentWriter.writeEnvironmentProperties();
     }
