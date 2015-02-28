@@ -1,23 +1,12 @@
 package helpers;
 
+import com.codeborne.selenide.testng.BrowserPerTest;
 import org.testng.ITestResult;
-import org.testng.reporters.ExitCodeListener;
 
-public class CustomListener extends ExitCodeListener{
-
+public class CustomListener extends BrowserPerTest {
     @Override
     public void onTestFailure(ITestResult result) {
-        super.onTestFailure(result);
         Actions.createAttachment(result.getMethod().getMethodName());
-    }
-
-    @Override
-    public void onTestStart(ITestResult result) {
-        super.onTestStart(result);
-    }
-
-    @Override
-    public void onTestSuccess(ITestResult result) {
-        super.onTestSuccess(result);
+        super.onTestFailure(result);
     }
 }

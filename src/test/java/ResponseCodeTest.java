@@ -1,4 +1,3 @@
-import com.codeborne.selenide.testng.BrowserPerTest;
 import core.basetests.ProxyTestBase;
 import helpers.CustomListener;
 import net.lightbody.bmp.core.har.HarEntry;
@@ -12,7 +11,7 @@ import pages.stat.StartPage;
 
 import static com.codeborne.selenide.Selenide.sleep;
 
-@Listeners({CustomListener.class, BrowserPerTest.class})
+@Listeners({CustomListener.class})
 public class ResponseCodeTest extends ProxyTestBase {
 
     @Test
