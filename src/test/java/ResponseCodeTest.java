@@ -21,7 +21,7 @@ public class ResponseCodeTest extends ProxyTestBase {
         StartPage.open("Slow Resources");
         SlowResourcesPage.shouldAppearAndExactTextShouldBeVisible("Slow Resources");
         sleep(30000);
-        for(HarEntry entry : getProxy().getHar().getLog().getEntries()) {
+        for (HarEntry entry : getProxy().getHar().getLog().getEntries()) {
             HarRequest request = entry.getRequest();
             HarResponse response = entry.getResponse();
             Assert.assertEquals(response.getStatus(), 200,

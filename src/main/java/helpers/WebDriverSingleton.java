@@ -22,6 +22,7 @@ public class WebDriverSingleton {
                 }
                 case "chrome": {
                     driver = new ChromeDriver(caps);
+
                     break;
                 }
                 case "ie": {
