@@ -16,7 +16,6 @@ public class EnvironmentWriter {
             .getCapabilities();
 
     public static void writeEnvironmentProperties() {
-
         Properties envProp = new Properties();
         OutputStream outputStream = null;
         String path = System.getProperty("user.dir") + "/target/allure-results/";
