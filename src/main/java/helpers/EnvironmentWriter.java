@@ -12,16 +12,13 @@ import java.util.Properties;
 import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 
 public class EnvironmentWriter {
-    private static Capabilities caps = ((RemoteWebDriver)getWebDriver())
-            .getCapabilities();
 
     public static void writeEnvironmentProperties() {
+        Capabilities caps = ((RemoteWebDriver)getWebDriver()).getCapabilities();
         Properties envProp = new Properties();
-        OutputStream outputStream = null;
         String path = System.getProperty("user.dir") + "/target/allure-results/";
 
-        try {
-            outputStream = new FileOutputStream(path + "environment.properties");
+        try (OutputStream outputStream = new FileOutputStream(path + "environment.properties")) {
 
             envProp.setProperty("OS:", caps.getPlatform().name());
             envProp.setProperty("Browser Name", caps.getBrowserName());
@@ -32,14 +29,6 @@ public class EnvironmentWriter {
 
         } catch (IOException e) {
             e.printStackTrace();
-        } finally {
-            if (outputStream != null) {
-                try {
-                    outputStream.close();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-            }
         }
     }
 }
