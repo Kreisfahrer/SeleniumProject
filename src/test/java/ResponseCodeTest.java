@@ -1,18 +1,14 @@
-import com.codeborne.selenide.testng.BrowserPerTest;
 import core.basetests.ProxyTestBase;
-import helpers.CustomListener;
 import net.lightbody.bmp.core.har.HarEntry;
 import net.lightbody.bmp.core.har.HarRequest;
 import net.lightbody.bmp.core.har.HarResponse;
 import org.testng.Assert;
-import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import pages.stat.SlowResourcesPage;
 import pages.stat.StartPage;
 
 import static com.codeborne.selenide.Selenide.sleep;
 
-@Listeners({CustomListener.class, BrowserPerTest.class})
 public class ResponseCodeTest extends ProxyTestBase {
 
     @Test
