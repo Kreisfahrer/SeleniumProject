@@ -6,6 +6,7 @@
             <class name="HowToStartTest" />
             <class name="ResponseCodeTest"/>
             <class name="StartPageTest"/>
+            <class name="SecureFileDownloadTest"/>
         </classes>
     </test>
 </suite>
