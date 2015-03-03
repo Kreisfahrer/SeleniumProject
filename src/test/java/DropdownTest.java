@@ -1,10 +1,8 @@
 import com.codeborne.selenide.Condition;
-import core.TestBase;
+import core.basetests.TestBase;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import pages.stat.DropdownPage;
-
-import java.io.IOException;
 
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
@@ -12,7 +10,7 @@ import static com.codeborne.selenide.Selenide.open;
 public class DropdownTest extends TestBase {
 
     @BeforeMethod
-    public void setup() throws IOException {
+    public void setup() throws Exception {
         super.setup();
         open("/dropdown");
     }
