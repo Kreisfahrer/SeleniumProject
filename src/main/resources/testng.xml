@@ -6,7 +6,8 @@
             <class name="HowToStartTest" />
             <class name="ResponseCodeTest"/>
             <class name="StartPageTest"/>
-            <class name="JQueryUITest" />
+            <class name="SecureFileDownloadTest"/>
+            <class name="JQueryUITest"/>
         </classes>
     </test>
 </suite>
