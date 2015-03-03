@@ -70,7 +70,6 @@
             <version>18.0</version>
         </dependency>
     </dependencies>
-
     <build>
         <plugins>
             <plugin>
@@ -81,6 +80,9 @@
                     <argLine>
                         -javaagent:${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar
                     </argLine>
+                    <suiteXmlFiles>
+                        <suiteXmlFile>${basedir}/src/main/resources/testng.xml</suiteXmlFile>
+                    </suiteXmlFiles>
                 </configuration>
                 <dependencies>
                     <dependency>
@@ -103,5 +105,4 @@
             </plugin>
         </plugins>
     </reporting>
-
 </project>
