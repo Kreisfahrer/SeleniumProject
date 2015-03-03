@@ -11,7 +11,6 @@ public class DropdownTest extends TestBase {
 
     @BeforeMethod
     public void setup() throws Exception {
-        super.setup();
         open("/dropdown");
     }
 
