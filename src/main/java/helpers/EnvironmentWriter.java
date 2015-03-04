@@ -12,34 +12,25 @@ import java.util.Properties;
 import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 
 public class EnvironmentWriter {
-    private static Capabilities caps = ((RemoteWebDriver)getWebDriver())
-            .getCapabilities();
+    private static  Properties envProp;
+
+    public static void collectEnvironmentProperties() {
+        Capabilities caps = ((RemoteWebDriver)getWebDriver()).getCapabilities();
+        envProp = new Properties();
+
+        envProp.setProperty("OS:", caps.getPlatform().name());
+        envProp.setProperty("Browser Name", caps.getBrowserName());
+        envProp.setProperty("Browser Version:", caps.getVersion());
+        envProp.setProperty("Base URL:", Configuration.baseUrl);
+    }
 
     public static void writeEnvironmentProperties() {
-        Properties envProp = new Properties();
-        OutputStream outputStream = null;
         String path = System.getProperty("user.dir") + "/target/allure-results/";
 
-        try {
-            outputStream = new FileOutputStream(path + "environment.properties");
-
-            envProp.setProperty("OS:", caps.getPlatform().name());
-            envProp.setProperty("Browser Name", caps.getBrowserName());
-            envProp.setProperty("Browser Version:", caps.getVersion());
-            envProp.setProperty("Base URL:", Configuration.baseUrl);
-
+        try (OutputStream outputStream = new FileOutputStream(path + "environment.properties")) {
             envProp.store(outputStream, "");
-
         } catch (IOException e) {
             e.printStackTrace();
-        } finally {
-            if (outputStream != null) {
-                try {
-                    outputStream.close();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-            }
         }
     }
 }
