@@ -19,6 +19,7 @@ public class TestBase {
     public void configure() {
         Configuration.baseUrl = System.getProperty("baseUrl", BASE_URL);
         Configuration.timeout = 10000;
+        EnvironmentWriter.collectEnvironmentProperties();
     }
 
     @BeforeMethod
